@@ -1,0 +1,16 @@
+<!-- res/drawable/button_space.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color for the space -->
+    <item android:drawable="@color/purple_700" />
+
+    <!-- Border to separate the buttons -->
+    <item
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp"
+        android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <stroke android:color="@android:color/black" android:width="2dp" />
+        </shape>
+    </item>
+</layer-list>
