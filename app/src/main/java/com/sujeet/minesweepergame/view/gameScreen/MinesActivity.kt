@@ -1,4 +1,4 @@
-package com.sujeet.minesweepergame
+package com.sujeet.minesweepergame.view.gameScreen
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,13 +7,15 @@ import android.os.CountDownTimer
 import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
+import com.sujeet.minesweepergame.view.CommonDialog
+import com.sujeet.minesweepergame.R
 import com.sujeet.minesweepergame.databinding.ActivityMinesBinding
 
 const val BEST_SCORE = "BEST_SCORE"
 const val PREV_SCORE = "PREV_SCORE"
 const val SHARED_PREF_NAME = "Game"
 
-open class MinesActivity : AppCompatActivity(),GameActivityInterface  {
+open class MinesActivity : AppCompatActivity(), GameActivityInterface {
     internal lateinit var binding: ActivityMinesBinding
 
     internal var rows = -1
@@ -98,9 +100,6 @@ open class MinesActivity : AppCompatActivity(),GameActivityInterface  {
         // setting click listeners and Long click listeners
         for(i in 0 until rows){
             for(j in 0 until columns){
-                if(arrMines[i][j].isMine){
-                    arrMines[i][j].btn.setBackgroundColor(resources.getColor(R.color.black))
-                }
                 arrMines[i][j].btn.setOnClickListener {
                     whenBtnClicked(arrMines[i][j])
                 }
@@ -219,7 +218,7 @@ open class MinesActivity : AppCompatActivity(),GameActivityInterface  {
                 apply()
             }
 
-            CommonDialog.showCommonDialog(this,true, object :CommonDialog.CommonDialogCallBack{
+            CommonDialog.showCommonDialog(this, true, object : CommonDialog.CommonDialogCallBack {
                 override fun onOk() {
                     restartGame()
                 }
@@ -227,7 +226,7 @@ open class MinesActivity : AppCompatActivity(),GameActivityInterface  {
             })
 
         }else{
-            CommonDialog.showCommonDialog(this, false, object :CommonDialog.CommonDialogCallBack{
+            CommonDialog.showCommonDialog(this, false, object : CommonDialog.CommonDialogCallBack {
                 override fun onOk() {
                     restartGame()
                 }

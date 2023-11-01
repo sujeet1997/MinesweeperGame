@@ -1,4 +1,4 @@
-package com.sujeet.minesweepergame
+package com.sujeet.minesweepergame.view
 
 import android.app.Dialog
 import android.content.Context
@@ -11,6 +11,10 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.sujeet.minesweepergame.R
+import com.sujeet.minesweepergame.view.gameScreen.BEST_SCORE
+import com.sujeet.minesweepergame.view.gameScreen.PREV_SCORE
+import com.sujeet.minesweepergame.view.gameScreen.SHARED_PREF_NAME
 
 object CommonDialog {
     private var dialog: Dialog? = null

@@ -1,4 +1,4 @@
-package com.sujeet.minesweepergame
+package com.sujeet.minesweepergame.view.gameScreen
 
 import android.os.CountDownTimer
 
